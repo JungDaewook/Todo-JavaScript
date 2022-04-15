@@ -20,6 +20,8 @@ function addTodoItem()  {
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
   TodoItemCount++;
+
+  document.getElementById('todoInputText').value = '';
 }
 
 function removeTodoItem(TodoItemCount) {
