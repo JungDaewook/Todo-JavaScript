@@ -1,9 +1,13 @@
-let TodoItemCount = 1;
+let TodoItemCount = 0;
 
 function addTodoItem()  {
   const todoInputTextValue = document.getElementById('todoInputText').value;
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(todoInputTextValue);
+
+  if (TodoItemCount >=20){
+    return ;
+  }
 
   todoItem.setAttribute("id", "todoItem" + TodoItemCount);
   todoItem.appendChild(textNode);
