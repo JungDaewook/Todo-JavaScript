@@ -9,6 +9,10 @@ function addTodoItem()  {
     return ;
   }
 
+  if(todoInputTextValue === ''){
+    return;
+  }
+
   todoItem.setAttribute("id", "todoItem" + TodoItemCount);
   todoItem.appendChild(textNode);
   todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem("+TodoItemCount+")')> 삭제 </button>";
