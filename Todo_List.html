@@ -4,17 +4,12 @@
     <title>Todo-List</title>
 </head>
 <body>
-    <script src = "./addTodoItem.js"></script>
+    <script src = "./functionsOfTodoList.js"></script>
     <h1>Todo-List</h1>
     <li> Todo List : </li>
     <input type = 'text' id = 'todoInputText' maxlength = '255'/>
     <input type = 'button' value = '추가' onclick = 'addTodoItem()' />
     <ul id = 'todoList'>
-        <style>
-            li:nth-of-type(n+20){
-                display: none;
-            }
-        </style>
     </ul>
 </body>
 </html>
