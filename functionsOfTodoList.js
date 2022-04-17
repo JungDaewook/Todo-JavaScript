@@ -5,7 +5,7 @@ function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(todoInputTextValue);
 
-  if (TodoItemCount >=20){
+  if (TodoItemCount >= 20){
     return ;
   }
 
@@ -20,7 +20,7 @@ function addTodoItem()  {
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
   TodoItemCount++;
-
+  
   document.getElementById('todoInputText').value = '';
 }
 
