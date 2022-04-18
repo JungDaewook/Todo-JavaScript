@@ -1,7 +1,6 @@
 const MAX_TODO_ITEM_COUNT = 20;
-const EMPTY_TODO_ITEM = '';
+const EMPTY_TODO_INPUT_TEXT = '';
 let TODO_ITEM_COUNT = 0;
-
 
 function getTodoInputTextValue() {
   return document.getElementById('todoInputText').value;
@@ -11,13 +10,13 @@ function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
 
-  if(isEmptyTodoInputText()){
+  /*if(isEmptyTodoInputText()){
     return;
   }
 
   if (isBiggerThanMAX_TODO_ITEM_COUNT()){
     return ;
-  }
+  }*/
 
   todoItem.setAttribute("id", "todoItem" + TODO_ITEM_COUNT);
   todoItem.appendChild(textNode);
@@ -35,6 +34,14 @@ function removeTodoItem(TODO_ITEM_COUNT) {
   todoList.removeChild(deleteTodoItem);
 }
 
+function isEmptyTodoInputText(){
+  if (getTodoInputTextValue() === EMPTY_TODO_INPUT_TEXT){
+    alert("입력창에 할 일을 입력하십시오.");
+    return true;
+  }
+  return false;
+}
+
 function isBiggerThanMAX_TODO_ITEM_COUNT(){
   if (TODO_ITEM_COUNT >= MAX_TODO_ITEM_COUNT){
     alert("할 일은 20개까지만 입력할 수 있습니다.");
@@ -43,10 +50,8 @@ function isBiggerThanMAX_TODO_ITEM_COUNT(){
   return false;
 }
 
-function isEmptyTodoInputText(){
-  if (getTodoInputTextValue() === EMPTY_TODO_ITEM){
-    alert("입력창에 할 일을 입력하십시오.");
-    return true;
+function handleAddButton(){
+  if(!isEmptyTodoInputText() && !isBiggerThanMAX_TODO_ITEM_COUNT()){
+    addTodoItem();
   }
-  return false;
 }
