@@ -1,15 +1,18 @@
 let TodoItemCount = 0;
 
+function getTodoInputTextValue() {
+  return document.getElementById('todoInputText').value;
+}
+
 function addTodoItem()  {
-  const todoInputTextValue = document.getElementById('todoInputText').value;
   const todoItem = document.createElement('li');
-  const textNode = document.createTextNode(todoInputTextValue);
+  const textNode = document.createTextNode(getTodoInputTextValue());
 
   if (TodoItemCount >= 20){
     return ;
   }
 
-  if(todoInputTextValue === ''){
+  if(getTodoInputTextValue() === ''){
     return;
   }
 
