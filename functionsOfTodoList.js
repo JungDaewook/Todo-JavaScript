@@ -1,6 +1,6 @@
 const MAX_TODO_ITEM_COUNT = 20;
 const EMPTY_TODO_INPUT_TEXT = '';
-let TODO_ITEM_COUNT = 0;
+let todoItemCount = 0;
 
 function getTodoInputTextValue() {
   return document.getElementById('todoInputText').value;
@@ -10,19 +10,19 @@ function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
 
-  todoItem.setAttribute("id", "todoItem" + TODO_ITEM_COUNT);
+  todoItem.setAttribute("id", "todoItem" + todoItemCount);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem("+TODO_ITEM_COUNT+")')> 삭제 </button>";
+  todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem("+todoItemCount+")')> 삭제 </button>";
   
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
-  TODO_ITEM_COUNT++;
+  todoItemCount++;
   
   document.getElementById('todoInputText').value = '';
 }
 
-function removeTodoItem(TODO_ITEM_COUNT) {
-  const deleteTodoItem = document.getElementById('todoItem' + TODO_ITEM_COUNT);
+function removeTodoItem(todoItemCount) {
+  const deleteTodoItem = document.getElementById('todoItem' + todoItemCount);
   todoList.removeChild(deleteTodoItem);
 }
 
@@ -35,7 +35,7 @@ function isEmptyTodoInputText(){
 }
 
 function isBiggerThanMAX_TODO_ITEM_COUNT(){
-  if (TODO_ITEM_COUNT >= MAX_TODO_ITEM_COUNT){
+  if (todoItemCount >= MAX_TODO_ITEM_COUNT){
     alert("할 일은 20개까지만 입력할 수 있습니다.");
     return true;
   }
