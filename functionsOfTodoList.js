@@ -33,7 +33,7 @@ function isEmptyTodoInputText(){
   return false;
 }
 
-function isBiggerThanMAX_TODO_ITEM_COUNT(){
+function isBiggerThanMaxTodoItemCount(){
   if (todoItemCount >= MAX_TODO_ITEM_COUNT){
     alert("할 일은 20개까지만 입력할 수 있습니다.");
     return true;
@@ -42,7 +42,7 @@ function isBiggerThanMAX_TODO_ITEM_COUNT(){
 }
 
 function handleAddButton(){
-  if(!isEmptyTodoInputText() && !isBiggerThanMAX_TODO_ITEM_COUNT()){
+  if(!isEmptyTodoInputText() && !isBiggerThanMaxTodoItemCount()){
     addTodoItem();
   }
 }
