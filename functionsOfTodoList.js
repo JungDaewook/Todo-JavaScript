@@ -1,5 +1,4 @@
 const MAX_TODO_ITEM_COUNT = 20;
-const EMPTY_TODO_INPUT_TEXT = '';
 let todoItemCount = 0;
 
 function getTodoInputTextValue() {
@@ -27,7 +26,7 @@ function removeTodoItem(todoItemCount) {
 }
 
 function isEmptyTodoInputText(){
-  if (getTodoInputTextValue() === EMPTY_TODO_INPUT_TEXT){
+  if (getTodoInputTextValue() === ''){
     alert("입력창에 할 일을 입력하십시오.");
     return true;
   }
