@@ -9,7 +9,7 @@ function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
 
-  todoItem.setAttribute("id", "todoItem" + todoItemCount);
+  todoItem.setAttribute("id", 'todoItem' + todoItemCount);
   todoItem.appendChild(textNode);
   todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem("+todoItemCount+")')> 삭제 </button>";
   
@@ -27,7 +27,6 @@ function removeTodoItem(todoItemCount) {
 
 function isEmptyTodoInputText(){
   if (getTodoInputTextValue() === ''){
-    alert("입력창에 할 일을 입력하십시오.");
     return true;
   }
   return false;
@@ -35,13 +34,20 @@ function isEmptyTodoInputText(){
 
 function isBiggerThanMaxTodoItemCount(){
   if (todoItemCount >= MAX_TODO_ITEM_COUNT){
-    alert("할 일은 20개까지만 입력할 수 있습니다.");
     return true;
   }
   return false;
 }
 
 function handleAddButton(){
+  if(isEmptyTodoInputText()) {
+    alert("입력창에 할 일을 입력하십시오.");
+  }
+
+  if(isBiggerThanMaxTodoItemCount()){
+    alert("할 일은 20개까지만 입력할 수 있습니다.");
+  }
+
   if(!isEmptyTodoInputText() && !isBiggerThanMaxTodoItemCount()){
     addTodoItem();
   }
