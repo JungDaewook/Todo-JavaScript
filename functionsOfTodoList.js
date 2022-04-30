@@ -8,10 +8,11 @@ function getTodoInputTextValue() {
 function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
+  let todoItemId = "todoItem" + todoItemCount;
 
-  todoItem.setAttribute("id", 'todoItem' + todoItemCount);
+  todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem("+todoItemCount+")')> 삭제 </button>";
+  todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")'> 삭제 </button>";
   
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
@@ -20,8 +21,8 @@ function addTodoItem()  {
   document.getElementById('todoInputText').value = '';
 }
 
-function removeTodoItem(todoItemCount) {
-  const deleteTodoItem = document.getElementById('todoItem' + todoItemCount);
+function removeTodoItem(todoItemId) {
+  const deleteTodoItem = document.getElementById(todoItemId);
   todoList.removeChild(deleteTodoItem);
 }
 
