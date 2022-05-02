@@ -24,6 +24,7 @@ function addTodoItem()  {
 function removeTodoItem(todoItemId) {
   const deleteTodoItem = document.getElementById(todoItemId);
   todoList.removeChild(deleteTodoItem);
+  todoItemCount--;
 }
 
 function isEmptyTodoInputText(){
