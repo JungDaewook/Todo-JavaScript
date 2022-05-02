@@ -27,17 +27,11 @@ function removeTodoItem(todoItemId) {
 }
 
 function isEmptyTodoInputText(){
-  if (getTodoInputTextValue() === ''){
-    return true;
-  }
-  return false;
+  return getTodoInputTextValue() === '';
 }
 
 function isBiggerThanMaxTodoItemCount(){
-  if (todoItemCount >= MAX_TODO_ITEM_COUNT){
-    return true;
-  }
-  return false;
+  return todoItemCount >= MAX_TODO_ITEM_COUNT;
 }
 
 function handleAddButton(){
