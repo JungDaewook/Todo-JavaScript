@@ -27,24 +27,19 @@ function removeTodoItem(todoItemId) {
   todoItemCount--;
 }
 
-function isEmptyTodoInputText(){
-  return getTodoInputTextValue() === '';
-}
-
-function isBiggerThanMaxTodoItemCount(){
-  return todoItemCount >= MAX_TODO_ITEM_COUNT;
-}
-
 function handleAddButton(){
-  if(isEmptyTodoInputText()) {
+  const isEmptyTodoInputTextValue = getTodoInputTextValue() === '';
+  const isMaximumTodoInputCount = todoItemCount >= MAX_TODO_ITEM_COUNT;
+
+  if(isEmptyTodoInputTextValue) {
     alert("입력창에 할 일을 입력하십시오.");
   }
 
-  if(isBiggerThanMaxTodoItemCount()){
+  if(isMaximumTodoInputCount){
     alert("할 일은 20개까지만 입력할 수 있습니다.");
   }
 
-  if(!isEmptyTodoInputText() && !isBiggerThanMaxTodoItemCount()){
+  if(!isEmptyTodoInputTextValue && !isMaximumTodoInputCount){
     addTodoItem();
   }
 }
