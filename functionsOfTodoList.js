@@ -1,5 +1,6 @@
 const MAX_TODO_ITEM_COUNT = 20;
 let todoItemCount = 0;
+let isTodoListEmpty = true;
 
 function getTodoInputTextValue() {
   return document.getElementById('todoInputText').value;
@@ -19,12 +20,31 @@ function addTodoItem()  {
   todoItemCount++;
   
   document.getElementById('todoInputText').value = '';
+
+  isTodoListEmpty = false;
 }
 
 function removeTodoItem(todoItemId) {
   const deleteTodoItem = document.getElementById(todoItemId);
   todoList.removeChild(deleteTodoItem);
   todoItemCount--;
+
+  if(todoItemCount === 0){
+    isTodoListEmpty = true;
+  }
+}
+
+function removeAllTodoItem() {
+
+  if(isTodoListEmpty){
+    alert("삭제할 리스트가 없습니다.");
+    return;
+  }
+
+  todoList = document.getElementById('todoList');
+  todoList.innerHTML = '';
+  todoItemCount = 0;
+  isTodoListEmpty = true;
 }
 
 function handleAddButton(){
