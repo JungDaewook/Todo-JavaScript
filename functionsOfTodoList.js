@@ -13,7 +13,7 @@ function addTodoItem()  {
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "<button type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")'> 삭제 </button>";
+  todoItem.innerHTML += "&nbsp; <button type = 'button' onclick = 'strikeTodoItem(\""+todoItemId+"\")'> 완료 </button> <button type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")'> 삭제 </button>";
   
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
@@ -22,6 +22,11 @@ function addTodoItem()  {
   document.getElementById('todoInputText').value = '';
 
   isTodoListEmpty = false;
+}
+
+function strikeTodoItem(todoItemId) {
+  const strikeTodoItem = document.getElementById(todoItemId);
+  strikeTodoItem.innerHTML = "<strike>" + strikeTodoItem.innerHTML + "</strike>"
 }
 
 function removeTodoItem(todoItemId) {
