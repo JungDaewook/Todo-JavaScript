@@ -14,8 +14,8 @@ function addTodoItem()  {
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "&nbsp; <input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/> <button type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")'> 삭제 </button>";
-  
+  todoItem.innerHTML += "&nbsp; <input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/> <input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
+
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
   todoItemCount++;
@@ -27,13 +27,13 @@ function addTodoItem()  {
 
 function strikeTodoItem(todoItemId) {
   const strikeTodoItem = document.getElementById(todoItemId);
-  const clickStrikeButton = document.getElementById('strikeButton');
+  //const clickStrikeButton = document.getElementById('strikeButton');
 
   beforeStrikeTodoItem = strikeTodoItem.innerHTML ;
-  clickStrikeButton.value = "취소";
-  clickStrikeButton.setAttribute("onclick", 'cancelStrikeTodoItem(\''+todoItemId+'\')');
+  //clickStrikeButton.value = "취소";
+  //clickStrikeButton.setAttribute("onclick", 'cancelStrikeTodoItem(\''+todoItemId+'\')');
 
-  strikeTodoItem.innerHTML = "<strike>" + strikeTodoItem.innerHTML + "</strike>"
+  strikeTodoItem.innerHTML = "<strike>" + strikeTodoItem.innerText + "</strike> <input type = 'button' id = 'strikeButton' onclick = 'cancelStrikeTodoItem(\""+todoItemId+"\")' value = '취소'/> <input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
 }
 
 function cancelStrikeTodoItem(todoItemId) {
