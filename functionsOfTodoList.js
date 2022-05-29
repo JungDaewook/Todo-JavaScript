@@ -35,7 +35,6 @@ function removeTodoItem(todoItemId) {
 }
 
 function removeAllTodoItem() {
-
   if(isTodoListEmpty){
     alert("삭제할 리스트가 없습니다.");
     return;
