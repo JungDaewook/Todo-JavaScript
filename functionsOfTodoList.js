@@ -27,11 +27,8 @@ function addTodoItem()  {
 
 function strikeTodoItem(todoItemId) {
   const strikeTodoItem = document.getElementById(todoItemId);
-  //const clickStrikeButton = document.getElementById('strikeButton');
 
   beforeStrikeTodoItem = strikeTodoItem.innerHTML ;
-  //clickStrikeButton.value = "취소";
-  //clickStrikeButton.setAttribute("onclick", 'cancelStrikeTodoItem(\''+todoItemId+'\')');
 
   strikeTodoItem.innerHTML = "<strike>" + strikeTodoItem.innerText + "</strike> <input type = 'button' id = 'strikeButton' onclick = 'cancelStrikeTodoItem(\""+todoItemId+"\")' value = '취소'/> <input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
 }
@@ -57,7 +54,6 @@ function removeTodoItem(todoItemId) {
 }
 
 function removeAllTodoItem() {
-
   if(isTodoListEmpty){
     alert("삭제할 리스트가 없습니다.");
     return;
