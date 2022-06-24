@@ -1,5 +1,6 @@
 const MAX_TODO_ITEM_COUNT = 20;
 let todoItemCount = 0;
+let todoItemIdCount = 0;
 let isTodoListEmpty = true;
 
 function getTodoInputTextValue() {
@@ -9,16 +10,17 @@ function getTodoInputTextValue() {
 function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
-  let todoItemId = "todoItem" + todoItemCount;
+  let todoItemId = "todoItem" + todoItemIdCount;
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
   todoItem.innerHTML += "&nbsp; <input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/>"; 
-  todoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
+  todoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제\'/>";
 
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
   todoItemCount++;
+  todoItemIdCount++;
   
   document.getElementById('todoInputText').value = '';
 
