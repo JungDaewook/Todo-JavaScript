@@ -1,6 +1,6 @@
 const MAX_TODO_ITEM_COUNT = 20;
 let todoItemCount = 0;
-let todoItemIdCount = 0;
+let todoItemIdNumber = 0;
 let isTodoListEmpty = true;
 
 function getTodoInputTextValue() {
@@ -10,7 +10,7 @@ function getTodoInputTextValue() {
 function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
-  let todoItemId = "todoItem" + todoItemIdCount;
+  let todoItemId = "todoItem" + todoItemIdNumber;
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
@@ -20,7 +20,7 @@ function addTodoItem()  {
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
   todoItemCount++;
-  todoItemIdCount++;
+  todoItemIdNumber++;
   
   document.getElementById('todoInputText').value = '';
 
