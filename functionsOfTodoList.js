@@ -15,7 +15,7 @@ function addTodoItem()  {
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
   todoItem.innerHTML += "&nbsp; <input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/>"; 
-  todoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제\'/>";
+  todoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
 
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
