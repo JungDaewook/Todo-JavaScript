@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <title>Todo-List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Todo-List</h1>
-    <li> Todo List : </li>
-    <input type = 'text' id = 'todoInputText' maxlength = "255"/>
-    <input type = 'button' value = '추가' onclick = 'handleAddButton()' />
-    <input type = 'button' value = '전체 삭제' onclick = 'removeAllTodoItem()'/>
-    <ul id = 'todoList'></ul>
+<body class = "body" >
+        <header class = "header">Todo-List</header>
+        <main class = "main">
+            <div class = "todoListInput">
+                <input type = 'text' id = 'todoInputText' placeholder = "Add Todo" maxlength = "255"/>
+                <input class = "button add" type = 'button' value = '추가' onclick = 'handleAddButton()' />
+                <input class = "button deleteAll" type = 'button' value = '전체 삭제' onclick = 'removeAllTodoItem()'/>
+            </div>
+            <div class = "todoListContainer">
+                <div class = "nav"></div>
+                <div class = "todoList" id = 'todoList'></div>
+                <div class = "AD"></div>
+            </div>
+        </main>
     <script src = "./functionsOfTodoList.js"></script>
 </body>
 </html>

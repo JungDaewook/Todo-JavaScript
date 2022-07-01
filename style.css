@@ -1,0 +1,59 @@
+input[type = text] {
+    flex: 1 1;
+    width : 300px;
+    height : 36px;
+    border-radius : 15px;
+    font-size : 20px;
+}
+input[type = button] {
+    color : white;
+    background-color :rgb(62, 59, 245);
+    width : 70px;
+    height : 30px;
+    border-radius : 3px;
+}
+.body {
+    background-color: rgb(62, 59, 245);
+    align-items : center;
+}
+.header {
+    text-align : center;
+    font-size : 70px;
+    height : 70px;
+    margin : 20px;
+    color :white;
+}
+.todoListInput {
+    text-align : center;
+    align-items : center;
+}
+.todoListContainer {
+    display : flex;
+    align-items : center;
+}
+.nav{
+    flex-grow :1;
+}
+.todoList input {
+    float : right;
+}
+.todoList {
+    margin-top : 20px;
+    padding : 20px;
+    background-color: white;
+    border-radius : 15px;
+    align-items : center;
+}
+.todoList li {
+    width : 500px;
+    list-style : square; 
+    padding : 10px;
+    font-size : 20px;
+    border :1px solid black;
+    margin : 10px;
+    border-radius : 15px;
+    background-color : rgb(227, 233, 245);
+}
+.AD{
+    flex-grow: 1;
+}
