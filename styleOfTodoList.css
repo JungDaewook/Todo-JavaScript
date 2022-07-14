@@ -1,19 +1,34 @@
 .bodyContainer {
+    background-color : blue;
+    height : 100vh;
     display : flex;
     flex-direction : column;
-    align-items : center;
 }
 .bodyContainer h1 {
-
+    text-align : center;
 }
 .todoListMainContainer {
-    
+    display : flex;
+    flex-direction : row;
 }
-.todoListMainHeaderContainer {
+.todoListNavContainer {
+    flex-grow : 1;
+}
+.todoListContentContainer {
+    width : 600px;
+    flex-shrink : 1;
+}
+.todoListContentHeaderContainer {
     display : flex;
     justify-content : space-between;
 }
+.todoListAdContainer {
+    flex-grow :1;
+}
 #todoList {
+    display : flex;
+    background-color : white;
+    min-height : 300px;
     display : flex;
     flex-direction : column;
 }

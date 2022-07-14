@@ -8,14 +8,18 @@
     <div class = "bodyContainer">
         <h1>Todo-List</h1>
         <div class = "todoListMainContainer">
-            <div class = "todoListMainHeaderContainer">
-                <input type = 'text' id = 'todoInputText' maxlength = "255"/>
-                <div class = "todoListMainHeaderButtons">
-                    <input type = 'button' value = '추가' onclick = 'handleAddButton()' />
-                    <input type = 'button' value = '전체 삭제' onclick = 'removeAllTodoItem()'/>
+            <div class = "todoListNavContainer"></div>
+            <div class = "todoListContentContainer">
+                <div class = "todoListContentHeaderContainer">
+                    <input type = 'text' id = 'todoInputText' maxlength = "255"/>
+                    <div class = "todoListMainHeaderButtons">
+                        <input type = 'button' value = '추가' onclick = 'handleAddButton()' />
+                        <input type = 'button' value = '전체 삭제' onclick = 'removeAllTodoItem()'/>
+                    </div>
                 </div>
+                <ul id = 'todoList'></ul>
             </div>
-            <ul id = 'todoList'></ul>
+            <div class = "todoListAdContainer"></div>
         </div>
     </div>
     <script src = "./functionsOfTodoList.js"></script>
