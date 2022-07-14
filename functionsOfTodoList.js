@@ -14,8 +14,7 @@ function addTodoItem()  {
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "&nbsp; <input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/>"; 
-  todoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
+  todoItem.innerHTML += "<div class = 'strikeAndRemoveButton'><input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/><input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/></div>"; 
 
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
@@ -31,16 +30,14 @@ function strikeTodoItem(todoItemId) {
   const strikeTodoItem = document.getElementById(todoItemId);
 
   strikeTodoItem.innerHTML = strikeTodoItem.innerText.strike();
-  strikeTodoItem.innerHTML += "<input type = 'button' id = 'strikeButton' onclick = 'cancelStrikeTodoItem(\""+todoItemId+"\")' value = '취소'/>";
-  strikeTodoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
+  strikeTodoItem.innerHTML += "<div class = 'strikeAndRemoveButton'><input type = 'button' id = 'strikeButton' onclick = 'cancelStrikeTodoItem(\""+todoItemId+"\")' value = '취소'/><input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/></div>";
 }
 
 function cancelStrikeTodoItem(todoItemId) {
   const cancelStrikeTodoItem = document.getElementById(todoItemId);
   
   cancelStrikeTodoItem.innerHTML = cancelStrikeTodoItem.innerText;
-  cancelStrikeTodoItem.innerHTML += "<input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/>";
-  cancelStrikeTodoItem.innerHTML += "<input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>";
+  cancelStrikeTodoItem.innerHTML += "<div class = 'strikeAndRemoveButton'><input type = 'button' id = 'strikeButton' onclick = 'strikeTodoItem(\""+todoItemId+"\")' value = '완료'/><input type = 'button' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/></div>";
 }
 
 function removeTodoItem(todoItemId) {
