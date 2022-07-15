@@ -32,15 +32,18 @@
     flex : auto;
 
     max-width : 400px;
-    height : 30px;
+    height : 40px;
     font-size : 20px;
     border-radius : 15px;
+    border : none;
+    padding-left : 10px;
 }
 .todoListContentHeaderButtons input {
     flex : auto;
 
     height : 30px;
     border-radius : 15px;
+    border : none;
     padding : 0 15px;
     cursor : pointer;
 }
@@ -63,8 +66,35 @@
 
     background-color : white;
     min-height : 300px;
+    border-radius : 15px;
+    padding-left : 0;
 }
 #todoList li {
     display : flex;
     justify-content : space-between;
+
+    list-style : circle;
+    background-color : rgb(240, 240, 240);
+    margin : 15px;
+    padding : 10px;
+    font-size : 20px;
+    border-radius : 20px;
+}
+#todoList input {
+    height : 30px;
+    border-radius : 15px;
+    border : none;
+    padding : 0 15px;
+    cursor : pointer;
+}
+#strikeButton {
+    color : white;
+    background-color : blue;
+    margin-right : 10px;
+}
+#removeButton {
+    background-color : white;
+}
+#removeButton:hover {
+    color : red;
 }
