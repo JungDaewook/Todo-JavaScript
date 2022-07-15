@@ -1,8 +1,9 @@
 .bodyContainer {
-    background-color : blue;
-    height : 100vh;
     display : flex;
     flex-direction : column;
+
+    background-color : blue;
+    height : 100vh;
 }
 .bodyContainer h1 {
     text-align : center;
@@ -15,8 +16,9 @@
     flex-grow : 1;
 }
 .todoListContentContainer {
-    width : 600px;
     flex-shrink : 1;
+
+    width : 600px;
 }
 .todoListContentHeaderContainer {
     display : flex;
@@ -27,10 +29,10 @@
 }
 #todoList {
     display : flex;
+    flex-direction : column;
+
     background-color : white;
     min-height : 300px;
-    display : flex;
-    flex-direction : column;
 }
 #todoList li {
     display : flex;
