@@ -1,13 +1,10 @@
 body {
     background-color : rgb(0, 81, 255);
-}
-
-.bodyContainer {
     display : flex;
     flex-direction : column;
 }
 
-.bodyContainer h1 {
+body h1 {
     text-align : center;
 
     font-size : 70px;
@@ -16,11 +13,7 @@ body {
 
 .todoListMainContainer {
     display : flex;
-    flex-direction : row;
-}
-
-.todoListNavContainer {
-    flex-grow : 1;
+    justify-content : center;
 }
 
 .todoListContentContainer {
