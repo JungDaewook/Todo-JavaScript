@@ -72,14 +72,17 @@ body h1 {
 }
 
 #todoList li {
-    display: flex;
-    justify-content: space-between;
     background-color: rgb(240, 240, 240);
     margin: 15px;
     padding: 10px;
     font-size: 20px;
     border-radius: 20px;
     list-style-position: inside;
+}
+
+.strikeAndRemoveButton {
+    display: inline;
+    float: right;
 }
 
 #todoList input {
