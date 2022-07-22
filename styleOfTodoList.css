@@ -6,7 +6,6 @@ body {
 
 body h1 {
     text-align: center;
-
     font-size: 70px;
     color: white;
 }
@@ -18,7 +17,6 @@ body h1 {
 
 .todoListContentContainer {
     flex-shrink: 1;
-
     width: 600px;
 }
 
@@ -30,7 +28,6 @@ body h1 {
 
 #todoInputText {
     flex: auto;
-
     max-width: 400px;
     height: 40px;
     font-size: 20px;
@@ -41,7 +38,6 @@ body h1 {
 
 .todoListContentHeaderButtons input {
     flex: auto;
-
     height: 30px;
     border-radius: 15px;
     border: none;
@@ -69,7 +65,6 @@ body h1 {
 #todoList {
     display: flex;
     flex-direction: column;
-
     background-color: white;
     min-height: 300px;
     border-radius: 15px;
@@ -79,13 +74,12 @@ body h1 {
 #todoList li {
     display: flex;
     justify-content: space-between;
-
-    list-style: circle;
     background-color: rgb(240, 240, 240);
     margin: 15px;
     padding: 10px;
     font-size: 20px;
     border-radius: 20px;
+    list-style-position: inside;
 }
 
 #todoList input {
