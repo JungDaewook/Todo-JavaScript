@@ -2,7 +2,6 @@ const MAX_TODO_ITEM_COUNT = 20;
 let todoItemCount = 0;
 let todoItemIdIndex = 0;
 let isTodoListEmpty = true;
-let todoItemId = returningTodoItemId();
 
 function getTodoInputTextValue() {
   return document.getElementById('todoInputText').value;
