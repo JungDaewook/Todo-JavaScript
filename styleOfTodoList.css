@@ -80,7 +80,6 @@ body h1 {
     padding: 10px;
     font-size: 20px;
     border-radius: 20px;
-    position: relative;
     list-style: none;
     text-indent: 20px;
 }
@@ -88,12 +87,11 @@ body h1 {
 #todoList li::before {
     content: "";
     position: absolute;
-    left: 5px;
     width: 6px;
     height: 6px;
     border-radius: 100%;
     background-color: black;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 #todoList input {
