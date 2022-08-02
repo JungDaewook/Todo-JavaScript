@@ -20,7 +20,7 @@ function textForInnerHtmlOfRemoveButton(todoItemId) {
   return "<input type = 'button' id = 'removeButton' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>"; 
 }
 
-function wrapTextForInnerHtmlWithDivTag(textForInnerHtml) {
+function wrapInnerHtmlTextOfButtonsWithDivTag(textForInnerHtml) {
   return "<div class = 'strikeAndRemoveButton'>" + textForInnerHtml + "</div>";
 }
 
@@ -34,7 +34,7 @@ function addTodoItem()  {
 
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
+  todoItem.innerHTML += wrapInnerHtmlTextOfButtonsWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
 
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
@@ -53,7 +53,7 @@ function strikeTodoItem(todoItemId) {
   const innerHtmlTextOfRemoveButton = textForInnerHtmlOfRemoveButton(todoItemId);
 
   strikeTodoItem.innerHTML = strikeTodoItem.innerText.strike();
-  strikeTodoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfCancelStrikeButton + innerHtmlTextOfRemoveButton);
+  strikeTodoItem.innerHTML += wrapInnerHtmlTextOfButtonsWithDivTag(innerHtmlTextOfCancelStrikeButton + innerHtmlTextOfRemoveButton);
 }
 
 function cancelStrikeTodoItem(todoItemId) {
@@ -63,7 +63,7 @@ function cancelStrikeTodoItem(todoItemId) {
   const innerHtmlTextOfRemoveButton = textForInnerHtmlOfRemoveButton(todoItemId);
   
   cancelStrikeTodoItem.innerHTML = cancelStrikeTodoItem.innerText;
-  cancelStrikeTodoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
+  cancelStrikeTodoItem.innerHTML += wrapInnerHtmlTextOfButtonsWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
 }
 
 function removeTodoItem(todoItemId) {
