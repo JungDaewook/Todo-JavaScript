@@ -2,6 +2,7 @@ const MAX_TODO_ITEM_COUNT = 20;
 let todoItemCount = 0;
 let todoItemIdIndex = 0;
 let isTodoListEmpty = true;
+let todoItemId = returningTodoItemId();
 
 function getTodoInputTextValue() {
   return document.getElementById('todoInputText').value;
@@ -19,14 +20,21 @@ function textForInnerHtmlOfRemoveButton(todoItemId) {
   return "<input type = 'button' id = 'removeButton' onclick = 'removeTodoItem(\""+todoItemId+"\")' value = '삭제'/>"; 
 }
 
+function wrapTextForInnerHtmlWithDivTag(textForInnerHtml) {
+  return "<div class = 'strikeAndRemoveButton'>" + textForInnerHtml + "</div>";
+}
+
 function addTodoItem()  {
   const todoItem = document.createElement('li');
   const textNode = document.createTextNode(getTodoInputTextValue());
   let todoItemId = "todoItem" + todoItemIdIndex;
 
+  const innerHtmlTextOfStrikeButton = textForInnerHtmlOfStrikeButton(todoItemId);
+  const innerHtmlTextOfRemoveButton = textForInnerHtmlOfRemoveButton(todoItemId);
+
   todoItem.setAttribute("id", todoItemId);
   todoItem.appendChild(textNode);
-  todoItem.innerHTML += "<div class = 'strikeAndRemoveButton'>" + textForInnerHtmlOfStrikeButton(todoItemId) + textForInnerHtmlOfRemoveButton(todoItemId) + "</div>"; 
+  todoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
 
   todoList = document.getElementById('todoList');
   todoList.appendChild(todoItem);
@@ -41,15 +49,21 @@ function addTodoItem()  {
 function strikeTodoItem(todoItemId) {
   const strikeTodoItem = document.getElementById(todoItemId);
 
+  const innerHtmlTextOfCancelStrikeButton = textForInnerHtmlOfCancelStrikeButton(todoItemId);
+  const innerHtmlTextOfRemoveButton = textForInnerHtmlOfRemoveButton(todoItemId);
+
   strikeTodoItem.innerHTML = strikeTodoItem.innerText.strike();
-  strikeTodoItem.innerHTML += "<div class = 'strikeAndRemoveButton'>" + textForInnerHtmlOfCancelStrikeButton(todoItemId) + textForInnerHtmlOfRemoveButton(todoItemId) + "</div>"; 
+  strikeTodoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfCancelStrikeButton + innerHtmlTextOfRemoveButton);
 }
 
 function cancelStrikeTodoItem(todoItemId) {
   const cancelStrikeTodoItem = document.getElementById(todoItemId);
+
+  const innerHtmlTextOfStrikeButton = textForInnerHtmlOfStrikeButton(todoItemId);
+  const innerHtmlTextOfRemoveButton = textForInnerHtmlOfRemoveButton(todoItemId);
   
   cancelStrikeTodoItem.innerHTML = cancelStrikeTodoItem.innerText;
-  cancelStrikeTodoItem.innerHTML += "<div class = 'strikeAndRemoveButton'>" + textForInnerHtmlOfStrikeButton(todoItemId) + textForInnerHtmlOfRemoveButton(todoItemId) + "</div>"; 
+  cancelStrikeTodoItem.innerHTML += wrapTextForInnerHtmlWithDivTag(innerHtmlTextOfStrikeButton + innerHtmlTextOfRemoveButton);
 }
 
 function removeTodoItem(todoItemId) {
